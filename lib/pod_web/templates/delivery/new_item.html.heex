@@ -1,0 +1,21 @@
+<%= form_for @changeset, @action, fn f -> %>
+	<div class="form-group">
+		<label>Item</label>
+		<%= number_input f, :delivery_item, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<label>Material</label>
+		<%= text_input f, :material, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<label>Description</label>
+		<%= text_input f, :description, class: "form-control" %>
+	</div>
+    <div class="form-group">
+		<label>Quantity</label>
+		<%= number_input f, :quantity, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= submit "Add Delivery Item", class: "btn btn-primary" %>
+	</div>
+<% end %>

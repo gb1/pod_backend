@@ -1,0 +1,30 @@
+<h1>Listing Deliveries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Delivery number</th>
+      <th>Deliver date</th>
+      <th>Customer</th>
+      <th>Address</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for delivery <- @deliveries do %>
+    <tr>
+      <td><%= delivery.delivery_number %></td>
+      <td><%= delivery.deliver_date %></td>
+      <td><%= delivery.customer %></td>
+      <td><%= delivery.address %></td>
+      <td>
+        <span><%= link "Show", to: Routes.delivery_path(@conn, :show, delivery) %></span>
+        <span><%= link "Edit", to: Routes.delivery_path(@conn, :edit, delivery) %></span>
+        <span><%= link "Delete", to: Routes.delivery_path(@conn, :delete, delivery), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Delivery", to: Routes.delivery_path(@conn, :new) %></span>

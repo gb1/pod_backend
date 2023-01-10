@@ -1,0 +1,5 @@
+<h1>Edit Delivery</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.delivery_path(@conn, :update, @delivery)) %>
+
+<span><%= link "Back", to: Routes.delivery_path(@conn, :index) %></span>

@@ -1,0 +1,51 @@
+<h1>Delivery</h1>
+
+<ul>
+
+  <li>
+    <strong>Delivery number:</strong>
+    <%= @delivery.delivery_number %>
+  </li>
+
+  <li>
+    <strong>Deliver date:</strong>
+    <%= @delivery.deliver_date %>
+  </li>
+
+  <li>
+    <strong>Customer:</strong>
+    <%= @delivery.customer %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @delivery.address %>
+  </li>
+
+  <li>
+    <strong>Contact:</strong>
+    <%= @delivery.contact %>
+  </li>
+
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @delivery.phone %>
+  </li>
+
+  <li>
+    <strong>Post code:</strong>
+    <%= @delivery.post_code %>
+  </li>
+
+</ul>
+
+<%= render "items.html", items: @delivery.delivery_items %>
+<br/>
+<h2>Add item</h2>
+
+<%= render "new_item.html", delivery: @delivery, changeset: @changeset, action:
+Routes.delivery_delivery_path(@conn, :add_item, @delivery) %>
+
+<span><%= link "Edit", to: Routes.delivery_path(@conn, :edit, @delivery) %></span> |
+<span><%= link "Back", to: Routes.delivery_path(@conn, :index) %></span>

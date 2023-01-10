@@ -1,0 +1,15 @@
+<h3>Items:</h3>
+<div class="items">
+	<div class="item header">
+		<div>Item</div>
+		<div>Material</div>
+        <div>Quantity</div>
+	</div>
+	<%= for item <- @items do %>
+	<div class="item">
+		<div><%= item.delivery_item %></div>
+		<div><%= item.material%></div>
+        <div><%= item.quantity%></div>
+	</div>
+	<% end %>
+</div>
